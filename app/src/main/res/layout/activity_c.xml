@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/buttonB_to_C"
+    android:id="@+id/layoutActivityB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2196f3"
@@ -12,35 +12,48 @@
         android:id="@+id/buttonC_to_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:onClick="onClickListener"
         android:text="Open ActivityA"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="162dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonC_to_D"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="292dp"
         android:text="Open ActivityD"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="271dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonC_close_C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="388dp"
         android:text="Close ActivityC"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="370dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonC_close_stack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="492dp"
         android:text="Close Stack"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="465dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
