@@ -16,13 +16,39 @@ class Activity_C : AppCompatActivity() {
         Log.d("Debug", "onCreateC")
     }
 
-    fun onClickListener(view: View) { // создаем функцию и указываем переменную view типа View (!)
+    override fun onResume() {
+        super.onResume()
+        Log.d("Debug", "onResumeC")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Debug", "onDestroyC")
+    }
+    fun onClickListenerOpenAfromC(view: View) { // создаем функцию и указываем переменную view типа View (!)
         if (view is Button) {
             // Создаем Intent для открытия другого Activity
             val intent = Intent(this, Activity_A::class.java)
             // Начинаем новое Activity
             startActivity(intent)
         }
+    }
+
+    fun onClickListenerOpenDfromC(view: View){
+        val intent = Intent(this, Activity_D::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+    }
+
+    fun onClickListenerCloseCAndStack(view: View){
+        val intent = Intent(this, Activity_B::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+    }
+
+    fun onClickListenerCloseStackAndGoA(view: View){
+        val intent = Intent(this, Activity_A::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
 }
