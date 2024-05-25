@@ -18,12 +18,14 @@
         <activity
             android:name=".Activity_C"
             android:exported="false" />
+
         <activity
             android:name=".Activity_B"
             android:exported="false" />
         <activity
             android:name=".Activity_A"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

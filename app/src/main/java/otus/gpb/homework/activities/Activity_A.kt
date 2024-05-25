@@ -17,30 +17,29 @@ class Activity_A : AppCompatActivity() {
         Log.d("Debug", "onCreateA")
         }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("Debug", "onDestroyA")
-    }
     fun onClickListener(view: View){ // создаем функцию и указываем переменную view типа View (!)
         if (view is Button) {
             // Создаем Intent для открытия другого Activity
             val intent = Intent(this, Activity_B::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            // Задание 2.1: Создаем FLAG_ACTIVITY_NEW_TASK для singleTop и добавляем флаг FLAG_ACTIVITY_MULTIPLE_TASK для открытия в новом таске
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
             // Начинаем новое Activity
             startActivity(intent)
         }
 
     }
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-    }
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("Debug", "onRestart")
-        val intent = Intent(this, Activity_A::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
-        startActivity(intent)
-        Log.d("Debug", "onNewIntent")
-    }
+//    override fun onNewIntent(intent: Intent?) {
+//        super.onNewIntent(intent)
+//    }
+//    override fun onRestart() {
+//        super.onRestart()
+//        Log.d("Debug", "onRestart")
+//        val intent = Intent(this, Activity_A::class.java)
+//        intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
+//        startActivity(intent)
+//        Log.d("Debug", "onNewIntent")
+//    }
+
+
 
 }

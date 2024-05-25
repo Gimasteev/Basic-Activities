@@ -23,7 +23,7 @@ class Activity_B : AppCompatActivity() {
     fun onClickListener(view: View){ // создаем функцию и указываем переменную view типа View (!)
         if (view is Button) {
             Log.d("Debug", "openB")
-            // Создаем Intent для открытия другого Activity
+            // // Задание 2.2: Создаем Intent для открытия другого Activity
             val intent = Intent(this, Activity_C::class.java)
             // Начинаем новое Activity
             startActivity(intent)

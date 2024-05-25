@@ -35,20 +35,25 @@ class Activity_C : AppCompatActivity() {
 
     fun onClickListenerOpenDfromC(view: View){
         val intent = Intent(this, Activity_D::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        // Задание 2.4: Создаю новый активти и чищу весь стек. Вроде как сделано задание. Нажимаю назад и закрывается текущий таск, НО потом открываю трей и вижу, что оно есть))))
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or  Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
 
-    fun onClickListenerCloseCAndStack(view: View){
+    fun onClickListenerCloseCAndGoBack(view: View){
         val intent = Intent(this, Activity_B::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
+        // Задание 2.5: Финиширую активити С
+        finish()
+        //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        //startActivity(intent)
     }
 
     fun onClickListenerCloseStackAndGoA(view: View){
         val intent = Intent(this, Activity_A::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
+        // Задание 2.5: Финиширую через функцию finishAffinity(), но опять-таки вижу в трее что висит активити С
+        finishAffinity()
+        //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        //startActivity(intent)
     }
 
 }
